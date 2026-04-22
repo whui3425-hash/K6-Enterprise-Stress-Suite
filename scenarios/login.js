@@ -7,8 +7,8 @@ export const options = {
 
 export default function () {
   const payload = {
-    username: "demo_user",
-    password: "Test@123456",
+    username: "zhangsan",
+    password: "123456",
     captcha: ENV.FIXED_CAPTCHA,
   };
 
