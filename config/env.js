@@ -4,11 +4,11 @@
 export const ENV = {
   // 被压测系统的基础地址（协议 + 域名）
   // 例如: http://shop1.whmall.test 或 http://127.0.0.1:8080
-  BASE_URL: "http://shop1.whmall.test",
+  BASE_URL: "http://localhost:8088",
 
   // 固定验证码：当测试环境验证码被写死时使用
   // 如果后续改为动态验证码，这里可以不再使用
-  FIXED_CAPTCHA: "123456",
+  FIXED_CAPTCHA: "PERF-TEST",
 
   // 虚拟用户数（Virtual Users）
   // 表示同时在线执行脚本的用户数量

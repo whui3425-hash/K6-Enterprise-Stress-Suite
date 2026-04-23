@@ -9,7 +9,6 @@ export default function () {
   const payload = {
     username: "zhangsan",
     password: "123456",
-    captcha: ENV.FIXED_CAPTCHA,
   };
 
   loginUser(payload);

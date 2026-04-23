@@ -25,9 +25,23 @@ export function loginUser(payload) {
     headers: { "Content-Type": "application/json" },
   });
 
+  let body = null;
+  try {
+    body = res.json();
+  } catch (error) {
+    body = null;
+  }
+
   check(res, {
-    "login status is 200": (r) => r.status === 200,
+    "login http status is 200": (r) => r.status === 200,
+    "login biz code is 20000": () => body && body.code === 20000,
   });
+
+  if (res.status !== 200 || !body || body.code !== 20000) {
+    console.error(
+      `login failed: http_status=${res.status}, biz_code=${body ? body.code : "N/A"}, body=${String(res.body).slice(0, 300)}`
+    );
+  }
 
   return res;
 }
